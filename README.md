@@ -2,18 +2,17 @@
 ### Student(i)
 
 ## Descriere
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+Aplicație de facturare în care poți introduce firme și poți emite facturi către respectivele firme. Facturile pot fi plătite instant sau în tranșe.
 
 ## Obiective
-Lorem ipsum
+Definim clasele și field-urile de care avem nevoie
 
-* ob1
-* ob2
-* ob3
-    - sob31
-    - sob32
-    - ...
-* ....
+* Firmă cu diverse date relevante
+* Factură cu diverse date relevante și cu fk spre firma către care este emisă
+* Plată cu fk referitor la factura către care este facută plata
+* Datele pot fi adaugate, editate, listate, sterse
+* Platile NU pot fi editate in nici un fel
+* Facturile NU mai pot fi editate după ce a fost emisă o plată care o vizează
 
 ## Arhitectura
 Lorem ipsum ...
