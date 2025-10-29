@@ -1,5 +1,5 @@
-# Titlu proiect
-### Student(i)
+# Aplicație facturare
+### Hac Filip
 
 ## Descriere
 Aplicație de facturare în care poți introduce firme și poți emite facturi către respectivele firme. Facturile pot fi plătite instant sau în tranșe.
