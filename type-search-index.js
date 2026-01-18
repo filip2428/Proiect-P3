@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"org.example.model","l":"Factura"},{"p":"org.example.service","l":"FacturareService"},{"p":"org.example.model","l":"Firma"},{"p":"org.example","l":"Main"},{"p":"org.example.model","l":"Plata"}];updateSearchResults();
