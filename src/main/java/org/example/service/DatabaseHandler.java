@@ -8,10 +8,9 @@ import java.sql.Statement;
 public class DatabaseHandler {
 
     // 1. Configurare conexiune PostgreSQL
-    // ATENTIE: Verifica daca portul e 5432 (default) si pune parola ta de la pgAdmin!
     private static final String URL = "jdbc:postgresql://localhost:5432/aplicatie_facturare_p3";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "137903"; // <--- PUNE PAROLA AICI
+    private static final String PASSWORD = "137903";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
@@ -22,7 +21,6 @@ public class DatabaseHandler {
              Statement stmt = conn.createStatement()) {
 
             // 1. Tabel FIRMA
-            // La Postgres folosim SERIAL pentru auto-increment, nu AUTOINCREMENT
             String sqlFirma = "CREATE TABLE IF NOT EXISTS firme (" +
                     "id SERIAL PRIMARY KEY, " +
                     "nume TEXT NOT NULL, " +
@@ -37,7 +35,8 @@ public class DatabaseHandler {
                     "numar TEXT NOT NULL, " +
                     "data TEXT NOT NULL, " +
                     "data_scadenta TEXT NOT NULL, " +
-                    "total DOUBLE PRECISION NOT NULL, " + // Postgres prefera DOUBLE PRECISION
+                    "total DOUBLE PRECISION NOT NULL, " +
+                    "status TEXT DEFAULT 'ACTIVA', " +
                     "firma_id INTEGER, " +
                     "FOREIGN KEY(firma_id) REFERENCES firme(id)" +
                     ");";
@@ -53,11 +52,10 @@ public class DatabaseHandler {
                     ");";
             stmt.execute(sqlPlata);
 
-            System.out.println("Conexiunea la PostgreSQL a reusit si tabelele sunt verificate!");
+            System.out.println("Conectat la DB");
 
         } catch (SQLException e) {
-            System.err.println("Eroare la conectarea cu PostgreSQL!");
-            System.err.println("Verifica: 1. Numele bazei de date. 2. User/Parola. 3. Daca serverul merge.");
+            System.err.println("Eroare la conectare cu DB");
             e.printStackTrace();
         }
     }
